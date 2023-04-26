@@ -45,9 +45,9 @@ public class MainView extends Pane {
     ImageView dogImage;
 
     //Constructor
-    public MainView() throws URISyntaxException {
+    public MainView(Dog dog) throws URISyntaxException {
         //create a new dog
-        dog = new Dog("Fido", 0, "mutt", "brown");
+        this.dog = dog;
         
         //create a label that displays the name of the dog
         nameLabel = new Label("Name: " + dog.getName());
@@ -139,7 +139,7 @@ public class MainView extends Pane {
         newDogButton.setLayoutY(170);
         //add an event handler to the button
         newDogButton.setOnAction(event -> {
-            dog = new Dog(nameField.getText(), Integer.parseInt(ageField.getText()), breedChoice.getValue(), colorChoice.getValue());
+            this.dog = new Dog(nameField.getText(), Integer.parseInt(ageField.getText()), breedChoice.getValue(), colorChoice.getValue());
             nameLabel.setText("Name: " + dog.getName());
             ageLabel.setText("Age: " + dog.getAge());
             breedLabel.setText("Breed: " + dog.getBreed());
