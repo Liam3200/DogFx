@@ -1,0 +1,6 @@
+NumberFormatException -> The only runtime error that I was able to generate as a user is the NumberFormatException when I enter a non-numeric value in the text field.
+NegativeIntegerException -> I created other exceptions to prevent the user from setting a negative age
+IncorrectCharException -> and using a / in the name to create an escape character
+BlankFieldException -> I also created a custom exception to throw an exception if one of the text fields is empty.
+All errors are handled in the MainView class and are thrown in the newDogButton event listener method.
+The examples for the text fields are in the labels next to the text fields that display the dog object information.
