@@ -25,7 +25,6 @@ public class Dog {
 
     //create a method that makes the dog bark
     public void bark() {
-        System.out.println("Woof!");
         barked++;
     }
 

@@ -19,6 +19,8 @@ public class MainView extends Pane {
     private Label breedLabel;
     //Label for how many times the dog barks
     private Label barkedLabel;
+    //Label that says "Woof!"
+    private Label woofLabel;
 
     //Button that makes the dog bark and makes a new dog with the name and age from the textfields and the breed and color from the choiceboxes
     private Button barkButton;
@@ -80,6 +82,14 @@ public class MainView extends Pane {
         barkedLabel.setLayoutY(70);
         //add the label to the pane
         this.getChildren().add(barkedLabel);
+
+        //create a label that says "Woof!"
+        woofLabel = new Label();
+        //set the position of the label
+        woofLabel.setLayoutX(560);
+        woofLabel.setLayoutY(10);
+        //add the label to the pane
+        this.getChildren().add(woofLabel);
         
         //create a button that makes the dog bark
         barkButton = new Button("Bark");
@@ -90,6 +100,7 @@ public class MainView extends Pane {
         barkButton.setOnAction(event -> {
             dog.bark();
             barkedLabel.setText("Barked: " + dog.getBarked());
+            woofLabel.setText("< Woof!");
         });
         //add the button to the pane
         this.getChildren().add(barkButton);
@@ -140,10 +151,11 @@ public class MainView extends Pane {
         //add an event handler to the button
         newDogButton.setOnAction(event -> {
             this.dog = new Dog(nameField.getText(), Integer.parseInt(ageField.getText()), breedChoice.getValue(), colorChoice.getValue());
-            nameLabel.setText("Name: " + dog.getName());
-            ageLabel.setText("Age: " + dog.getAge());
-            breedLabel.setText("Breed: " + dog.getBreed());
-            barkedLabel.setText("Barked: " + dog.getBarked());
+            nameLabel.setText("Name: " + this.dog.getName());
+            ageLabel.setText("Age: " + this.dog.getAge());
+            breedLabel.setText("Breed: " + this.dog.getBreed());
+            barkedLabel.setText("Barked: " + this.dog.getBarked());
+            woofLabel.setText("");
             changeImage();
         });
         //add the button to the pane
