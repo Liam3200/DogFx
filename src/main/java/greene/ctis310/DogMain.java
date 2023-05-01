@@ -11,7 +11,7 @@ import java.net.URISyntaxException;
 /**
  * JavaFX App
  */
-public class App extends Application {
+public class DogMain extends Application {
 
     private static Scene scene;
 
